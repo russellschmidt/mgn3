@@ -33,7 +33,7 @@ function App(props) {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Welcome to the Circle</h1>
+        <h1>Circle Up</h1>
         <button onClick={() => Auth.federatedSignIn()}>Sign In</button>
         <button onClick={checkUser}>Check User</button>
         <button onClick={signOut}>Sign Out</button>

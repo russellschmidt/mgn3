@@ -5,6 +5,8 @@ import { withRouter } from 'react-router-dom';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
+import styled from  'styled-components';
+
 class Authenticator extends React.Component {
   state = {
     showSignIn: true
@@ -19,7 +21,7 @@ class Authenticator extends React.Component {
   render() {
     const { showSignIn } = this.state;
     return (
-      <div>
+      <Container>
         {
           showSignIn ? (
             <SignIn />
@@ -33,9 +35,15 @@ class Authenticator extends React.Component {
           >
           </button>
         </div>
-      </div>
+      </Container>
     )
   }
+
 }
 
 export default withRouter(Authenticator);
+
+const Container = styled.div`
+  display: 'flex',
+  justifyContent: 'center'
+`;

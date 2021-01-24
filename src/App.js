@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { Auth, Hub } from 'aws-amplify';
+import styled from  'styled-components';
 
 function checkUser() {
   Auth.currentAuthenticatedUser()
@@ -34,9 +35,9 @@ function App(props) {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Circle Up</h1>
-        <button onClick={() => Auth.federatedSignIn()}>Sign In</button>
-        <button onClick={checkUser}>Check User</button>
-        <button onClick={signOut}>Sign Out</button>
+        <Button onClick={() => Auth.federatedSignIn()}>Sign In</Button>
+        <Button onClick={checkUser}>Check User</Button>
+        <Button onClick={signOut}>Sign Out</Button>
       </header>
     </div>
   )
@@ -44,3 +45,19 @@ function App(props) {
 
 export default App
 
+const Button = styled.button`
+  font-family: Helvetica
+  letter-spacing: 0.4em;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  color: #202125;
+  cursor: pointer;
+  outline: 1px solid;
+  outline-color: rgba(71, 126, 232,0.5);
+  &:hover {
+    color: rgba(71, 126, 232, 0.7);
+    outline-color: rgba(71, 126, 232, 0);
+    outline-offset: 300px;
+  }
+`;

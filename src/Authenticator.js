@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import { Button } from './App';
 
 import styled from  'styled-components';
 
@@ -30,10 +31,14 @@ class Authenticator extends React.Component {
           )
         }
         <div>
-          <button
+          <Button
+            onClick = {() => this.switchState(true)}
+          > Sign in
+          </Button>
+          <Button
             onClick = {() => this.switchState(false)}
-          >
-          </button>
+          > Sign up
+          </Button>
         </div>
       </Container>
     )
@@ -44,6 +49,6 @@ class Authenticator extends React.Component {
 export default withRouter(Authenticator);
 
 const Container = styled.div`
-  display: 'flex',
-  justifyContent: 'center'
+  display: flex;
+  justifyContent: center;
 `;

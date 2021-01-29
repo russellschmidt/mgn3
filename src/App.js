@@ -35,7 +35,8 @@ function App(props) {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Circle Up</h1>
-        <Button onClick={() => Auth.federatedSignIn()}>Sign In</Button>
+        <Button onClick={() => Auth.federatedSignIn({provider: "Google"})}>Sign In with Google</Button>
+        <Button onClick={() => Auth.federatedSignIn({provider: "Facebook"})}>Sign In with Facebook</Button>
         <Button onClick={checkUser}>Check User</Button>
         <Button onClick={signOut}>Sign Out</Button>
       </header>
@@ -47,7 +48,7 @@ export default App
 
 const Button = styled.button`
   border: 1px solid rgba(71, 126, 232, 0.2);
-  border-radius: 3%;
+  border-radius: 8%;
   color: #202125;
   cursor: pointer;
   font-family: Helvetica
@@ -62,3 +63,5 @@ const Button = styled.button`
     outline-offset: 300px;
   }
 `;
+
+export { Button };

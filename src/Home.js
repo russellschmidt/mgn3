@@ -2,6 +2,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
+import styled from  'styled-components';
 
 class Home extends React.Component {
   state = {

@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.scss';
 
-import { Auth, Hub } from 'aws-amplify';
 import Header from './Header'
 import Router from './Router'
 import styled from  'styled-components';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div>

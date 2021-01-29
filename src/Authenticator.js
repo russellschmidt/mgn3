@@ -7,6 +7,7 @@ import SignUp from './SignUp';
 import { Button } from './App';
 
 import styled from  'styled-components';
+import { Auth } from 'aws-amplify';
 
 class Authenticator extends React.Component {
   state = {
@@ -38,6 +39,11 @@ class Authenticator extends React.Component {
           <Button
             onClick = {() => this.switchState(false)}
           > Sign up
+          </Button>
+          <Button 
+            onClick = {() => Auth.federatedSignIn({provider: 'Facebook'})}
+          >
+            Sign Up with Facebook
           </Button>
         </div>
       </Container>
